@@ -9,7 +9,7 @@
 }
 
  .main-title {
-	color: #7CFC00;
+	color: black;
 }
 
 .form-title {
@@ -17,20 +17,24 @@
 }
 
 .squad-title {
-	color: #7CFC00;
+	color: black;
 }
 
 .squad {
 	margin-left: -35px;
 }
 
-.create-teams {
-	width: 60px;
-	margin: 50px;
+#fixedbutton {
+    width: 10%;
+    margin: 70px;
+    padding: 10px;
+    color: white;
+    background-color: blue;
+
 }
 
 .teams-title {
-	color: #7CFC00;
+	color: black;
 }
 
 .team1 {

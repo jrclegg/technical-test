@@ -9,8 +9,9 @@
 		// Hide the create button at the 
 			$scope.show = false;
 
-
 			$scope.hide = true;
+
+			$scope.playerlist = false;
 		
 
 		// Create a function to add players
@@ -36,10 +37,15 @@
 
 				} 
 
-				if ($scope.players.length >=1) {
+				if ($scope.players.length >=10) {
 
 					$scope.show = true;
 				}
+
+				if ($scope.players.length >=1) {
+
+					$scope.playerlist = true;
+				} 
 
 				
 

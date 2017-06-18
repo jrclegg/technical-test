@@ -30,7 +30,7 @@
 
 		<!--Output Players -->
 		<center>
-		<h2 ng-show = "show" class = "squad-title">Squad List Profiles</h2>
+		<h2 ng-show = "playerlist" class = "squad-title">Squad List Profiles</h2>
 		</center>
 	<div>
 		<div ng-repeat = "player in players" class = "col-xs-6 col-xs-4 well">
@@ -43,24 +43,23 @@
 		</div>
 	</div>
 
-<br><br><br><br><br><br>
-	
-	<!-- <h2>Create Your Teams!</h2>
-	 -->
 
-		<!-- Create Teams Button -->
+	<!-- Create Teams Button -->
 	<center>
-		<button type = "submit" ng-click = "shuffle(players)" class = "create-teams" ng-show ="show">Create Teams</button>
+	<div>
+	<button type = "submit" ng-click = "shuffle(players)" id = "fixedbutton" ng-show ="show">Create Teams</button>
+	</div>	
 	</center>
 
-	<br><br><br><br><br>
+	<br><br><br>
 
 	<center>
 	<h1 ng-hide = "hide" class = "teams-title">Here are your five-a-side teams!</h1>
 	</center>
 
+
 	<div>
-		<div ng-repeat = "player in team1" class = "col-xs-3 col-xs-6 well" style="color: red;">
+		<div ng-repeat = "player in team1" class = "col-xs-3 col-xs-6 well">
 			<ul class = "team1">
 				<li>Player Name: {{player.name}}</li>
 				<li>Skill: {{player.skill}}</li>
@@ -71,7 +70,7 @@
 	</div>
 
 	<div class = "team2">
-		<div ng-repeat = "player in team2" class = "col-xs-3 col-xs-6 well" style="color: blue;">
+		<div ng-repeat = "player in team2" class = "col-xs-3 col-xs-6 well" >
 			<ul class = "team2">
 				<li> Player Name: {{player.name}}</li>
 				<li>Skill: {{player.skill}}</li>
