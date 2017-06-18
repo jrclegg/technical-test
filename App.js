@@ -9,6 +9,10 @@
 		// Hide the create button at the 
 			$scope.show = false;
 
+
+			$scope.hide = true;
+		
+
 		// Create a function to add players
 			$scope.addPlayer = function () {
 
@@ -37,6 +41,8 @@
 					$scope.show = true;
 				}
 
+				
+
 			} 
 
 			$scope.shuffle = function (array) {
@@ -62,6 +68,11 @@
 
   			$scope.team1 = array.slice(0,5);
   			$scope.team2 = array.slice(5,10);
+
+  			if ($scope.team1.length >=1) {
+
+					$scope.hide = false;
+				}
 
 		}
 

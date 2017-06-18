@@ -18,7 +18,7 @@
 		<!-- Add Player-->
 	<form class = "container">
 		<div class = "col-xs-5 well">
-		<h2>Build Squad</h2>
+		<h2 class = "form-title">Build Squad</h2>
 			Player Name:<input  type="text" ng-model = "playerName">
 			Skill:<input type="text" ng-model = "playerSkill"><br>
 			Creativity: <input type="text" ng-model = "playerCreativity"><br>
@@ -29,7 +29,9 @@
 	</form>	
 
 		<!--Output Players -->
-		<h2>Squad List Profiles</h2>
+		<center>
+		<h2 ng-show = "show" class = "squad-title">Squad List Profiles</h2>
+		</center>
 	<div>
 		<div ng-repeat = "player in players" class = "col-xs-6 col-xs-4 well">
 			<ul class = "squad">
@@ -48,17 +50,14 @@
 
 		<!-- Create Teams Button -->
 	<center>
-	<br><br>
-	
 		<button type = "submit" ng-click = "shuffle(players)" class = "create-teams" ng-show ="show">Create Teams</button>
 	</center>
 
 	<br><br><br><br><br>
 
-	<!--
-	<h1>Here are your five-a-side teams!</h1>
-	-->
-
+	<center>
+	<h1 ng-hide = "hide" class = "teams-title">Here are your five-a-side teams!</h1>
+	</center>
 
 	<div>
 		<div ng-repeat = "player in team1" class = "col-xs-3 col-xs-6 well" style="color: red;">

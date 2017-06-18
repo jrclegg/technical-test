@@ -1,7 +1,7 @@
 
 .container  {
 	width: 100%;
-	background-color: green;
+	background-color: #228B22;
 }
 
 .container input {
@@ -9,11 +9,28 @@
 }
 
  .main-title {
-	color: white;
+	color: #7CFC00;
+}
+
+.form-title {
+	color: 
+}
+
+.squad-title {
+	color: #7CFC00;
 }
 
 .squad {
 	margin-left: -35px;
+}
+
+.create-teams {
+	width: 60px;
+	margin: 50px;
+}
+
+.teams-title {
+	color: #7CFC00;
 }
 
 .team1 {
@@ -24,7 +41,3 @@
 	margin-left: -30px;
 }
 
-.create-teams {
-	width: 60px;
-	margin: 50px;
-}
