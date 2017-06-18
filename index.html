@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Picking Football Teams</title>
+	<meta charset="utf-8">
+<!-- Link to Bootstrap -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body class = "container" ng-app = "PlayersApp" ng-controller = "PlayersController">
+
+<center>
+<h1 class = "main-title">Football Teams</h1>
+</center>
+
+<br><br>
+
+		<!-- Add Player-->
+	<form class = "container">
+		<div class = "col-xs-5 well">
+		<h2>Build Squad</h2>
+			Player Name:<input  type="text" ng-model = "playerName">
+			Skill:<input type="text" ng-model = "playerSkill"><br>
+			Creativity: <input type="text" ng-model = "playerCreativity"><br>
+			Tackling: <input type="text" ng-model="playerTackling">	<br><br>
+			<button type = "submit" ng-click= "addPlayer()" ng-disabled = "disabled">Add Player
+			</button>
+		</div>
+	</form>	
+
+		<!--Output Players -->
+		<h2>Squad List Profiles</h2>
+	<div>
+		<div ng-repeat = "player in players" class = "col-xs-6 col-xs-4 well">
+			<ul class = "squad">
+				<li>Name: {{player.name}}</li>
+				<li>Skill: {{player.skill}}</li>
+				<li>Creativity: {{player.creativity}}</li>
+				<li>Tackling: {{player.tackling}}</li>
+			</ul>
+		</div>
+	</div>
+
+<br><br><br><br><br><br>
+	
+	<!-- <h2>Create Your Teams!</h2>
+	 -->
+
+		<!-- Create Teams Button -->
+	<center>
+	<br><br>
+	
+		<button type = "submit" ng-click = "shuffle(players)" class = "create-teams" ng-show ="show">Create Teams</button>
+	</center>
+
+	<br><br><br><br><br>
+
+	<!--
+	<h1>Here are your five-a-side teams!</h1>
+	-->
+
+
+	<div>
+		<div ng-repeat = "player in team1" class = "col-xs-3 col-xs-6 well" style="color: red;">
+			<ul class = "team1">
+				<li>Player Name: {{player.name}}</li>
+				<li>Skill: {{player.skill}}</li>
+				<li>Creativity: {{player.creativity}}</li>
+				<li>Tackling: {{player.tackling}}</li>
+			</ul>
+		</div>
+	</div>
+
+	<div class = "team2">
+		<div ng-repeat = "player in team2" class = "col-xs-3 col-xs-6 well" style="color: blue;">
+			<ul class = "team2">
+				<li> Player Name: {{player.name}}</li>
+				<li>Skill: {{player.skill}}</li>
+				<li>Creativity: {{player.creativity}}</li>
+				<li>Tackling: {{player.tackling}}</li>
+			</ul>
+		</div>
+	</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js">
+</script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-route.js"></script>
+<script src = "App.js"> </script>
+</body>
+</html>
