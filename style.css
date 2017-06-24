@@ -10,21 +10,20 @@
 
  .main-title {
 	color: black;
-}
-
-.form-title {
-	color: 
+	text-align: center;
 }
 
 .squad-title {
 	color: black;
+	text-align: center;
 }
 
 .squad {
-	margin-left: -35px;
+	margin-left: -40px;
 }
 
-#fixedbutton {
+.create-teams {
+	text-align: center;
     width: 20%;
     margin: 70px;
     padding: 10px;
@@ -33,15 +32,28 @@
 
 }
 
-.teams-title {
+.five-a-side-title {
 	color: black;
+}
+
+.team-1-title {
+	margin-bottom: 20px;
+	color: red;
+}
+
+.team-2-title {
+	text-align: right;
+	width: 75%;
+	margin-right: 120px;
+	margin-top: -53px;
+	color: blue;
 }
 
 
 .team1 {
 	padding: -5px;
 	margin-left: -30px;
-	margin-top: 30px;
+	margin-top: -30px;
 	padding-left: 10px;
 	color: red;
 	display: flex;
@@ -53,6 +65,7 @@
 	padding: -10px;
 	margin-left: -40px;
 	margin-top: -750px;
+	color: blue;
 	display: flex;
 	flex-direction: column-reverse;
 	flex-wrap: wrap-reverse;

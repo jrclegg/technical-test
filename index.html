@@ -5,21 +5,21 @@
 	<meta charset="utf-8">
 <!-- Link to Bootstrap -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+<!-- Link to stylesheet -->
 	<link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body class = "container" ng-app = "PlayersApp" ng-controller = "PlayersController">
 
-<center>
-<h1 class = "main-title">Football Teams</h1>
-</center>
+	<!-- Main Title -->
+	<h1 class = "main-title">Football Teams</h1>
 
-<br><br>
+	<br>
 
-		<!-- Add Player-->
+		<!-- Add Player Form-->
 	<form class = "container">
 		<div class = "col-xs-12 col-md-6 well">
-		<h2 class = "form-title">Build Squad</h2>
-			Player Name:<input  type="text" ng-model = "playerName">
+			<h2 class = "form-title">Build Your Squad</h2>
+			Player Name:<input type="text" ng-model = "playerName">
 			Skill:<input type="text" ng-model = "playerSkill"><br>
 			Creativity: <input type="text" ng-model = "playerCreativity"><br>
 			Tackling: <input type="text" ng-model="playerTackling">	<br><br>
@@ -28,14 +28,16 @@
 		</div>
 	</form>	
 
-		<!--Output Players -->
-		<center>
+	<!-- Squad List Title -->
+	<div>
 		<h2 ng-show = "playerlist" class = "squad-title">Squad List Profiles</h2>
-		</center>
+	</div>
+
+	<!--Squad List of Players -->
 	<div>
 		<div ng-repeat = "player in players" class = "col-xs-6 well">
 			<ul class = "squad">
-				<li>Name: {{player.name}}</li>
+				<li>Player Name: {{player.name}}</li>
 				<li>Skill: {{player.skill}}</li>
 				<li>Creativity: {{player.creativity}}</li>
 				<li>Tackling: {{player.tackling}}</li>
@@ -46,19 +48,23 @@
 
 	<!-- Create Teams Button -->
 	<center>
-	<div>
-	<button type = "submit" ng-click = "shuffle(players)" id = "fixedbutton" ng-show ="show">Create Teams</button>
-	</div>	
+		<button type = "submit" ng-click = "shuffle(players)" class = "create-teams" ng-show ="show">Create Teams</button>	
 	</center>
 
-
-
+	<!-- Five a side teams title -->
 	<center>
-	<h1 ng-hide = "hide" class = "teams-title">Here are your five-a-side teams! </h1>
-
+	<h1 ng-hide = "hide" class = "five-a-side-title">Here are your five-a-side teams! </h1>
 	</center>
 
+	<!-- Team 1 Title -->
+	<h2 ng-hide = "hide" class = "team-1-title">Team 1</h2> 
 
+	<!-- Team 2 Title -->
+	<h2 ng-hide = "hide" class = "team-2-title">Team 2</h2>
+
+	<br><br>
+
+ 	<!-- Team 1 -->
 	<div class = "team1">
 		<div ng-repeat = "player in team1" class = "col-xs-6 well">
 			<ul class = "team-1-list">
@@ -70,21 +76,20 @@
 		</div>
 	</div>
 
+	<!-- Team 2 -->
 	<div class = "team2">
 		<div ng-repeat = "player in team2" class = "col-xs-6 well">
 			<ul class = "team-2-list">
-				<li> Player Name: {{player.name}}</li>
+				<li>Player Name: {{player.name}}</li>
 				<li>Skill: {{player.skill}}</li>
 				<li>Creativity: {{player.creativity}}</li>
 				<li>Tackling: {{player.tackling}}</li>
 			</ul>
 		</div>
 	</div>
-
-
-<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js">
-</script>
-<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-route.js"></script>
-<script src = "App.js"> </script>
+	
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js">
+	</script>
+	<script src = "App.js"> </script>
 </body>
 </html>
