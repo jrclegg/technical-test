@@ -8,7 +8,7 @@
 		// Create an empty array called scope.players
 			$scope.players = []; 
 		
-		// Dont show squad list title and create teams button 
+		// Dont show squad list title and create teams button
 			$scope.show = false;
 
 		// Hide five a side teams title, team 1 title, team 2 title
@@ -20,7 +20,7 @@
 			// Create an empty object 
 				var squadList = {};
 
-				/* Defining object attributes in scope so they
+				/* Define object attributes in scope so they
 				can be bound to ng model in the view */
 				squadList.name = $scope.playerName;
 				squadList.skill = $scope.playerSkill;
@@ -30,8 +30,6 @@
 				// Push squadList objects into players array
 				$scope.players.push(squadList);
 
-				console.log($scope.players);
-
 				/* Show the squad list title when a player 
 				is added to the squad list */
 				if ($scope.players.length >=1) {
@@ -39,7 +37,7 @@
 					$scope.playerlist = true;
 				} 	
 
-				// Disable add player button when squad has reached 16 players
+				// Disable add player button when squad has reached 10 players
 				if ($scope.players.length >= 10) {
 
 					$scope.disabled = true;	
@@ -47,7 +45,7 @@
 					$scope.disabled = false;
 				} 
 
-				// Show create teams button when number of players is 10 or more
+				// Show create teams button when number of players is 10 
 				if ($scope.players.length >=10) {
 
 					$scope.show = true;
@@ -55,7 +53,7 @@
 
 			} 
 
-			/* NOTE I would have liked to have added form validation here, I plan to
+			/* NOTE I would have liked to have added form validation here and plan to
 			begin building this functionality in the future */
 
 			// Create a function to shuffle the players
@@ -101,7 +99,7 @@
    						 }
 					}		
 
-  				// Assign the above arrays to teams in scope
+  				// Assign the new arrays to teams in scope
   				$scope.team1 = array2;
   				$scope.team2 = array3;			
 
