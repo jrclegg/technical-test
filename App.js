@@ -1,10 +1,12 @@
-
+ 
 	var myApp = angular.module("PlayersApp", []);
 
 		myApp.controller("PlayersController", ["$scope", function($scope) {
 
+		"use strict";
+
 		// Create an empty array called scope.players
-			$scope.players = [];
+			$scope.players = []; 
 		
 		// Dont show squad list title and create teams button 
 			$scope.show = false;
@@ -15,27 +17,29 @@
 		// Create a function to add players
 			$scope.addPlayer = function () {
 
-			// create an empty object 
+			// Create an empty object 
 				var squadList = {};
 
-				/* defining object attributes in scope so they
-				can be bound to ng model in the view*/
+				/* Defining object attributes in scope so they
+				can be bound to ng model in the view */
 				squadList.name = $scope.playerName;
 				squadList.skill = $scope.playerSkill;
 				squadList.creativity = $scope.playerCreativity;
 				squadList.tackling = $scope.playerTackling;
 
-				// push squadList object into players array
+				// Push squadList objects into players array
 				$scope.players.push(squadList);
 
-				/* show the squad list title when a player 
+				console.log($scope.players);
+
+				/* Show the squad list title when a player 
 				is added to the squad list */
 				if ($scope.players.length >=1) {
 
 					$scope.playerlist = true;
 				} 	
 
-				// disable add player button when squad has reached 16 players
+				// Disable add player button when squad has reached 16 players
 				if ($scope.players.length >= 10) {
 
 					$scope.disabled = true;	
@@ -43,7 +47,7 @@
 					$scope.disabled = false;
 				} 
 
-				// show create teams button when number of players is 10 or more
+				// Show create teams button when number of players is 10 or more
 				if ($scope.players.length >=10) {
 
 					$scope.show = true;
@@ -51,6 +55,10 @@
 
 			} 
 
+			/* NOTE I would have liked to have added form validation here, I plan to
+			begin building this functionality in the future */
+
+			// Create a function to shuffle the players
 			$scope.shuffle = function (array) {
 
   				var currentIndex = array.length, temporaryValue, randomIndex;
@@ -69,30 +77,36 @@
 
   				}
 
-  				// sort the array in descending order by creativity
+  				// Sort the array in descending order by attribute value
   				array.sort(function(a, b){
 
-  					 return b - a;
+  					 return b.creativity - a.creativity;
   				});  
 
-  				Arr2 = [];
-  				Arr3 = [];
+  				// Create two new empty arrays
+  				var array2 = [];
+  				var array3 = [];
 
-				for (var i=0;i<=array.length;i++){
-   					 if (i % 2==0) {
-       					 Arr3.push(array[i]);
-   						 }
-   						 else {
-      					  Arr2.push(array[i]);
+  				/* Fair teams filter - the for loop pushes even 
+  				and odd array indexes into the empty arrays */
+				for (var i = 0;i < array.length; i++){
+
+   					 if (i % 2 !==0) {
+
+       					 array2.push(array[i]);
+
+   						 }  else {
+
+      					 array3.push(array[i]);
    						 }
 					}		
 
-  				// slice the array
-  				$scope.team1 = Arr2;
-  				$scope.team2 = Arr2;			
+  				// Assign the above arrays to teams in scope
+  				$scope.team1 = array2;
+  				$scope.team2 = array3;			
 
 
-  				/* show five a side team title and team 1 and team 2 titles 
+  				/* Show five a side team title, team 1 and team 2 titles 
   				when teams are created */
   				if ($scope.team1.length >=1) {
 
@@ -100,19 +114,8 @@
 				}
 			}
 
-
 		}]);	
 
-/*	
 
-  				// slice the array
-  				$scope.team1 = Arr2;
-  				$scope.team2 = Arr2;
 
-  				 // slice the array
-  				$scope.team1 = array.slice(0,5);
-  				$scope.team2 = array.slice(5,10);
-  				 
-	*/
-
-			
+		

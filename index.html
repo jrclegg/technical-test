@@ -24,7 +24,7 @@
 			Creativity: <input type="text" ng-model = "playerCreativity"><br>
 			Tackling: <input type="text" ng-model="playerTackling">	<br><br>
 			<button type = "submit" ng-click= "addPlayer()" ng-disabled = "disabled">Add Player
-			</button>
+			</button> <br><br>Important Note: you must add 10 players to create a team!!!
 		</div>
 	</form>	
 
@@ -52,9 +52,8 @@
 	</center>
 
 	<!-- Five a side teams title -->
-	<center>
 	<h1 ng-hide = "hide" class = "five-a-side-title">Here are your five-a-side teams! </h1>
-	</center>
+
 
 	<!-- Team 1 Title -->
 	<h2 ng-hide = "hide" class = "team-1-title">Team 1</h2> 
@@ -87,9 +86,10 @@
 			</ul>
 		</div>
 	</div>
-	
+	<!-- link to Angular -->
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js">
 	</script>
+	<!-- Link to App.js file -->
 	<script src = "App.js"> </script>
 </body>
 </html>
