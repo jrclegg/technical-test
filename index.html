@@ -16,15 +16,19 @@
 	<br>
 
 		<!-- Add Player Form-->
-	<form class = "container">
+	<form name = "myForm" class = "container" novalidate>
 		<div class = "col-xs-12 col-md-6 well">
 			<h2 class = "form-title">Build Your Squad</h2>
-			Player Name:<input type="text" ng-model = "playerName">
-			Skill:<input type="text" ng-model = "playerSkill"><br>
-			Creativity: <input type="text" ng-model = "playerCreativity"><br>
-			Tackling: <input type="text" ng-model="playerTackling">	<br><br>
-			<button type = "submit" ng-click= "addPlayer()" ng-disabled = "disabled">Add Player
-			</button> <br><br>Important Note: you must add 10 players to create a team!!!
+			Player Name:<input name= "name" type="text" ng-model = "playerName" required> <p ng-show="myForm.name.$invalid && !myForm.name.$pristine" class="help-block">A Player Name is required.</p>
+
+			Skill:<input name = "skill" type="number" name = "playerSkill" ng-model = "playerSkill" min="1" max= "10" required><br> <p ng-show="myForm.skill.$error.min" class = "help-block">Number must be between 1 and 10</p><p ng-show="myForm.skill.$error.max" class = "help-block">Number must be between 1 and 10 </p>
+
+			Creativity: <input name = "creativity" type="number" ng-model = "playerCreativity" min="1" max= "10" required><br> <p ng-show="myForm.creativity.$error.min" class = "help-block">Number must be between 1 and 10</p><p ng-show="myForm.creativity.$error.max" class = "help-block">Number must be between 1 and 10</p>
+
+			Tackling: <input name = "tackling" type="number" ng-model="playerTackling" min="1" max= "10" required> <p ng-show="myForm.tackling.$error.min" class = "help-block">Number must be between 1 and 10</p><p ng-show="myForm.tackling.$error.max" class = "help-block">Number must be between 1 and 10 </p><br><br> 
+
+			<button type = "submit" ng-click= "addPlayer()" ng-disabled = "myForm.$invalid || disabled">Add Player
+			</button> <br><br>Add Ten Players to Make Two Teams
 		</div>
 	</form>	
 
