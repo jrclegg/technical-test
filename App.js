@@ -57,13 +57,11 @@
 
 			} 
 
-			/* NOTE I would have liked to have added form validation here and plan to
-			begin building this functionality in the future */
-
 			// Create a function to shuffle the players
 			$scope.shuffle = function (array) {
 
   				var currentIndex = array.length, temporaryValue, randomIndex;
+
 
   				// While there remain elements to shuffle
  				 while (0 !== currentIndex) {
@@ -79,11 +77,13 @@
 
   				}
 
-  				// Sort the array in descending order by attribute value
+
+  				// Sort the array in descending order by attribute value 
   				array.sort(function(a, b){
 
   					 return b.creativity - a.creativity;
-  				});  
+
+  				}); 
 
   				// Create two new empty arrays
   				var array2 = [];
@@ -101,7 +101,8 @@
 
       					 array3.push(array[i]);
    						 }
-					}		
+					}	
+
 
   				// Assign the new arrays to teams in scope
   				$scope.team1 = array2;
