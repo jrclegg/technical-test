@@ -102,6 +102,7 @@
    						 }
 					}	
 
+					
 
 
   				// Assign the new arrays to teams in scope

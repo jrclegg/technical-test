@@ -15,18 +15,22 @@
 
 	<br><br>
 
+	<!-- BUILD SQUAD -->
+
 		<!-- Add Player Form-->
 	<form name = "myForm" class = "container">
 		<div class = "col-xs-12 col-md-6 well">
+			<!-- Add Player Title -->
 			<h2 class = "form-title">Build Your Squad</h2>
-			Player Name:<input name= "name" type="text" ng-model = "playerName" required> <p ng-show="myForm.name.$invalid && !myForm.name.$pristine" class="help-block">A Player Name is required.</p> <p ng-show = "myForm.number.$error" class = "help-block">Name cannot be a number</p>
-
+			<!-- Player Name Input & Form Validation -->
+			Player Name:<input name= "name" type="text" ng-model = "playerName" required> <p ng-show="myForm.name.$invalid && !myForm.name.$pristine" class="help-block">A Player Name is required.</p> <p ng-show = "myForm.number.$invalid" class = "help-block">Name cannot be a number</p>
+			<!-- Player Skill Input & Form Validation -->
 			Skill:<input name = "skill" type="number" name = "playerSkill" ng-model = "playerSkill" min="1" max= "10" required><br> <p ng-show="myForm.skill.$error.min" class = "help-block">Number must be between 1 and 10</p><p ng-show="myForm.skill.$error.max" class = "help-block">Number must be between 1 and 10 </p>
-
+			<!-- Player Creativity Input & Form Validation -->
 			Creativity: <input name = "creativity" type="number" ng-model = "playerCreativity" min="1" max= "10" required><br> <p ng-show="myForm.creativity.$error.min" class = "help-block">Number must be between 1 and 10</p><p ng-show="myForm.creativity.$error.max" class = "help-block">Number must be between 1 and 10</p>
-
+			<!-- Player Tackling Input & Form Validation -->
 			Tackling: <input name = "tackling" type="number" ng-model="playerTackling" min="1" max= "10" required> <p ng-show="myForm.tackling.$error.min" class = "help-block">Number must be between 1 and 10</p><p ng-show="myForm.tackling.$error.max" class = "help-block">Number must be between 1 and 10 </p><br><br> 
-
+			<!-- Add Player Submit-->
 			<button type = "submit" class="btn-primary" ng-click= "addPlayer()" ng-disabled = "myForm.$invalid || disabled" >Add Player
 			</button><br><br> Add Ten Players to Make Two Teams
 		</div>
@@ -37,10 +41,10 @@
 		<h2 ng-show = "playerlist" class = "squad-title">Squad List Profiles</h2>
 	</div>
 
-	<!--Squad List of Players -->
+	<!--Squad List (Each Player Output) -->
 	<div>
 		<div ng-repeat = "player in players" class = "col-xs-6 well">
-			<ul class = "squad">
+			<ul class = "squad-player">
 				<li>Player Name: {{player.name}}</li>
 				<li>Skill: {{player.skill}}</li>
 				<li>Creativity: {{player.creativity}}</li>
@@ -49,12 +53,15 @@
 		</div>
 	</div>
 
-	<!-- Create Teams Button -->
+	<!-- Create Teams/Shuffle Teams Button -->
 	<center>
 		<button type = "submit" ng-click = "shuffle(players)" class = "create-teams" ng-show ="show">Create/Shuffle Teams</button>	
 	</center>
 
-	<!-- Five a side teams title -->
+
+	<!-- FIVE A SIDE TEAMS-->
+
+	<!--Five a side teams title -->
 	<h1 ng-hide = "hide" class = "five-a-side-title">Here are your five-a-side teams! </h1>
 
 	<!-- Team 1 Title -->
