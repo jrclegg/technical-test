@@ -8,7 +8,7 @@
 		// Create an empty array called scope.players
 			$scope.players = []; 
 		
-		// Dont show squad list title and create teams button
+		// Dont show squad list title and create teams button at the beginning
 			$scope.show = false;
 
 		// Hide five a side teams title, team 1 title, team 2 title
@@ -30,8 +30,7 @@
 
 				// Push squadList objects into players array
 				$scope.players.push(squadList);
-
-				
+		
 				/* Show the squad list title when a player 
 				is added to the squad list */
 				if ($scope.players.length >=1) {
@@ -62,7 +61,6 @@
 
   				var currentIndex = array.length, temporaryValue, randomIndex;
 
-
   				// While there remain elements to shuffle
  				 while (0 !== currentIndex) {
 
@@ -73,17 +71,18 @@
     			// And swap it with the current element
     			temporaryValue = array[currentIndex];
     			array[currentIndex] = array[randomIndex];
-    			array[randomIndex] = temporaryValue;
+    			array[randomIndex] = temporaryValue;	
 
   				}
-
 
   				// Sort the array in descending order by attribute value 
   				array.sort(function(a, b){
 
   					 return b.creativity - a.creativity;
 
+
   				}); 
+
 
   				// Create two new empty arrays
   				var array2 = [];
@@ -102,6 +101,7 @@
       					 array3.push(array[i]);
    						 }
 					}	
+
 
 
   				// Assign the new arrays to teams in scope
