@@ -7,13 +7,9 @@
 
 		// Create an empty array called scope.players
 			$scope.players = []; 
-		
+
 		// Dont show squad list title and create teams button at the beginning
 			$scope.show = false;
-
-		// Hide five a side teams title, team 1 title, team 2 title
-			$scope.hide = true;
-
 
 		// Create a function to add players
 			$scope.addPlayer = function () {
@@ -21,8 +17,8 @@
 			// Create an empty object 
 				var squadList = {};
 
-				/* Define object attributes in scope so they
-				can be bound to ng model in the view */
+				/* Define player attributes in scope so they
+				can be bound to ng model in the form view */
 				squadList.name = $scope.playerName;
 				squadList.skill = $scope.playerSkill;
 				squadList.creativity = $scope.playerCreativity;
@@ -38,21 +34,13 @@
 					$scope.playerlist = true;
 				} 	
 
-
 				// Disable add player button when squad has reached 10 players
 				if ($scope.players.length >= 10) {
 
 					$scope.disabled = true;	
-				} else {
-					$scope.disabled = false;
+
+					$scope.create = true;
 				}
-
-
-				// Show create teams button when number of players is 10 
-				if ($scope.players.length >=10) {
-
-					$scope.show = true;
-				}	
 
 			} 
 
@@ -102,7 +90,7 @@
    						 }
 					}	
 
-					
+
 
 
   				// Assign the new arrays to teams in scope
@@ -114,9 +102,11 @@
   				when teams are created */
   				if ($scope.team1.length >=1) {
 
-					$scope.hide = false;
+					$scope.pickedteams = true;
 				}
 			}
+			
+		
 
 		}]);	
 

@@ -23,7 +23,7 @@
 			<!-- Add Player Title -->
 			<h2 class = "form-title">Build Your Squad</h2>
 			<!-- Player Name Input & Form Validation -->
-			Player Name:<input name= "name" type="text" ng-model = "playerName" required> <p ng-show="myForm.name.$invalid && !myForm.name.$pristine" class="help-block">A Player Name is required.</p> <p ng-show = "myForm.number.$invalid" class = "help-block">Name cannot be a number</p>
+			Player Name:<input name= "name" type="text" ng-invalid = "number" ng-model = "playerName" required> <p ng-show="myForm.name.$invalid && !myForm.name.$pristine" class="help-block">A Player Name is required.</p> <p ng-show = "myForm.number.$invalid" class = "help-block">Name cannot be a number</p>
 			<!-- Player Skill Input & Form Validation -->
 			Skill:<input name = "skill" type="number" name = "playerSkill" ng-model = "playerSkill" min="1" max= "10" required><br> <p ng-show="myForm.skill.$error.min" class = "help-block">Number must be between 1 and 10</p><p ng-show="myForm.skill.$error.max" class = "help-block">Number must be between 1 and 10 </p>
 			<!-- Player Creativity Input & Form Validation -->
@@ -55,20 +55,20 @@
 
 	<!-- Create Teams/Shuffle Teams Button -->
 	<center>
-		<button type = "submit" ng-click = "shuffle(players)" class = "create-teams" ng-show ="show">Create/Shuffle Teams</button>	
+		<button type = "submit" ng-click = "shuffle(players)" class = "create-teams" ng-show ="create">Create/Shuffle Teams</button>	
 	</center>
 
 
 	<!-- FIVE A SIDE TEAMS-->
 
 	<!--Five a side teams title -->
-	<h1 ng-hide = "hide" class = "five-a-side-title">Here are your five-a-side teams! </h1>
+	<h1 ng-show = "pickedteams" class = "five-a-side-title">Here are your five-a-side teams! </h1>
 
 	<!-- Team 1 Title -->
-	<h2 ng-hide = "hide" class = "team-1-title">Team 1</h2> 
+	<h2 ng-show = "pickedteams" class = "team-1-title">Team 1</h2> 
 
 	<!-- Team 2 Title -->
-	<h2 ng-hide = "hide" class = "team-2-title">Team 2</h2>
+	<h2 ng-show = "pickedteams" class = "team-2-title">Team 2</h2>
 
 	<br><br>
 
@@ -95,10 +95,10 @@
 			</ul>
 		</div>
 	</div>
-	<!-- link to Angular -->
-	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js">
-	</script>
-	<!-- Link to App.js file -->
-	<script src = "App.js"> </script>
+<!-- link to Angular -->
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js">
+</script>
+<!-- Link to App.js file -->
+<script src = "App.js"> </script>
 </body>
 </html>
