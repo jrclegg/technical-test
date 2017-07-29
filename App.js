@@ -35,8 +35,8 @@
 
 					$scope.playerlist = true;
 				} 	
-				/* When ten players have been added disable the add 
-				player function and show the create teams button */
+				/* Disable the add player function and show the create 
+				teams button hen ten players have been added  */
 				if ($scope.players.length >= 10) {
 
 					$scope.disabled = true;	
@@ -70,11 +70,16 @@
   				// Sort the array in descending order by attribute value 
   				array.sort(function(a, b){
 
-  					 return b.creativity - a.creativity;
+  				 b.creativity - a.creativity;
 
+  				 return array;
 
   				}); 
 
+
+  			}
+
+  			$scope.filter = function (array) {
 
   				// Create two new empty arrays
   				var array2 = [];
@@ -84,33 +89,29 @@
   				and odd array indexes into the empty arrays */
 				for (var i = 0;i < array.length; i++){
 
-   					 if (i % 2 !==0) {
+					if (i % 2 !==0) {
 
-       					 array2.push(array[i]);
+       				array2.push(array[i]);
 
-   						 }  else {
+   					} else { 
 
-      					 array3.push(array[i]);
-   						 }
-					}	
-
-
-
+   						array3.push(array[i]);
+   					}
+				}	
 
   				// Assign the new arrays to teams in scope
   				$scope.team1 = array2;
   				$scope.team2 = array3;			
 
 
-  				/* Show five a side team title, team 1 and team 2 titles 
+  				 /*Show five a side team title, team 1 and team 2 titles 
   				when teams are created */
   				if ($scope.team1.length >=1) {
 
-					$scope.pickedteams = true;
-				}
-			}
-			
-		
+  					$scope.pickedteams = true;
+  				}
+				
+  			}
 
 		}]);	
 
