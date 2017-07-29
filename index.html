@@ -25,11 +25,47 @@
 			<!-- Player Name Input & Form Validation -->
 			Player Name:<input name= "name" type="text" ng-invalid = "number" ng-model = "playerName" required> <p ng-show="myForm.name.$invalid && !myForm.name.$pristine" class="help-block">A Player Name is required.</p> <p ng-show = "myForm.number.$invalid" class = "help-block">Name cannot be a number</p>
 			<!-- Player Skill Input & Form Validation -->
-			Skill:<input name = "skill" type="number" name = "playerSkill" ng-model = "playerSkill" min="1" max= "10" required><br> <p ng-show="myForm.skill.$error.min" class = "help-block">Number must be between 1 and 10</p><p ng-show="myForm.skill.$error.max" class = "help-block">Number must be between 1 and 10 </p>
+			Skill:<select name = "skill" type="number" name = "playerSkill" ng-model = "playerSkill" min="1" max= "10" required>
+				<option>1</option>
+				<option>2</option>
+				<option>3</option>
+				<option>4</option>
+				<option>5</option>
+				<option>6</option>
+				<option>7</option>
+				<option>8</option>
+				<option>9</option>
+				<option>10</option>
+			</select>
+			<br> <p ng-show="myForm.skill.$error.min" class = "help-block">Number must be between 1 and 10</p><p ng-show="myForm.skill.$error.max" class = "help-block">Number must be between 1 and 10 </p>
 			<!-- Player Creativity Input & Form Validation -->
-			Creativity: <input name = "creativity" type="number" ng-model = "playerCreativity" min="1" max= "10" required><br> <p ng-show="myForm.creativity.$error.min" class = "help-block">Number must be between 1 and 10</p><p ng-show="myForm.creativity.$error.max" class = "help-block">Number must be between 1 and 10</p>
+			Creativity: <select name = "creativity" type="number" ng-model = "playerCreativity" min="1" max= "10" required>
+				<option>1</option>
+				<option>2</option>
+				<option>3</option>
+				<option>4</option>
+				<option>5</option>
+				<option>6</option>
+				<option>7</option>
+				<option>8</option>
+				<option>9</option>
+				<option>10</option>
+			</select><br> 
+			<p ng-show="myForm.creativity.$error.min" class = "help-block">Number must be between 1 and 10</p><p ng-show="myForm.creativity.$error.max" class = "help-block">Number must be between 1 and 10</p>
 			<!-- Player Tackling Input & Form Validation -->
-			Tackling: <input name = "tackling" type="number" ng-model="playerTackling" min="1" max= "10" required> <p ng-show="myForm.tackling.$error.min" class = "help-block">Number must be between 1 and 10</p><p ng-show="myForm.tackling.$error.max" class = "help-block">Number must be between 1 and 10 </p><br><br> 
+			Tackling: <select name = "tackling" type="number" ng-model="playerTackling" min="1" max= "10" required> 
+				<option>1</option>
+				<option>2</option>
+				<option>3</option>
+				<option>4</option>
+				<option>5</option>
+				<option>6</option>
+				<option>7</option>
+				<option>8</option>
+				<option>9</option>
+				<option>10</option>
+			</select>
+			<p ng-show="myForm.tackling.$error.min" class = "help-block">Number must be between 1 and 10</p><p ng-show="myForm.tackling.$error.max" class = "help-block">Number must be between 1 and 10 </p><br><br> 
 			<!-- Add Player Submit-->
 			<button type = "submit" class="btn-primary" ng-click= "addPlayer()" ng-disabled = "myForm.$invalid || disabled" >Add Player
 			</button><br><br> Add Ten Players to Make Two Teams

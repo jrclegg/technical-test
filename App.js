@@ -75,8 +75,6 @@
   				 return array;
 
   				}); 
-
-
   			}
 
   			$scope.filter = function (array) {
@@ -102,8 +100,6 @@
   				// Assign the new arrays to teams in scope
   				$scope.team1 = array2;
   				$scope.team2 = array3;			
-
-
   				 /*Show five a side team title, team 1 and team 2 titles 
   				when teams are created */
   				if ($scope.team1.length >=1) {
