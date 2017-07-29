@@ -34,17 +34,35 @@
 				if ($scope.players.length >=1) {
 
 					$scope.playerlist = true;
-				} 	
+
+				}  
 				/* Disable the add player function and show the create 
 				teams button hen ten players have been added  */
 				if ($scope.players.length >= 10) {
 
 					$scope.disabled = true;	
-
 					$scope.create = true;
 				}
 
 			} 
+
+			$scope.deletePlayer = function (players) {
+
+  				$scope.players.splice(players, 1);
+
+  				if ($scope.players.length <1) {
+
+					$scope.playerlist = false;
+					$scope.disabled = false;
+
+				} 
+
+				if ($scope.players.length <10) {
+
+					$scope.create = false;
+				}
+
+  			}
 
 			// CREATE TEAMS SECTION
 
@@ -108,6 +126,8 @@
   				}
 				
   			}
+
+  			
 
 		}]);	
 
