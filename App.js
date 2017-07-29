@@ -8,8 +8,10 @@
 		// Create an empty array called scope.players
 			$scope.players = []; 
 
-		// Dont show squad list title and create teams button at the beginning
+		// Hide all titles and buttons that have an ng-show on them
 			$scope.show = false;
+
+		// ADD PLAYER SECTION
 
 		// Create a function to add players
 			$scope.addPlayer = function () {
@@ -27,14 +29,14 @@
 				// Push squadList objects into players array
 				$scope.players.push(squadList);
 		
-				/* Show the squad list title when a player 
+				/* Show the squad list profiles title when a player 
 				is added to the squad list */
 				if ($scope.players.length >=1) {
 
 					$scope.playerlist = true;
 				} 	
-
-				// Disable add player button when squad has reached 10 players
+				/* When ten players have been added disable the add 
+				player function and show the create teams button */
 				if ($scope.players.length >= 10) {
 
 					$scope.disabled = true;	
@@ -43,6 +45,8 @@
 				}
 
 			} 
+
+			// CREATE TEAMS SECTION
 
 			// Create a function to shuffle the players
 			$scope.shuffle = function (array) {
