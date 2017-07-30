@@ -8,9 +8,6 @@
 		// Create an empty array called scope.players
 			$scope.players = []; 
 
-		// Hide all titles and buttons that have an ng-show on them
-			$scope.show = false;
-
 		// ADD PLAYER SECTION
 
 		// Create a function to add players
@@ -28,22 +25,18 @@
 
 				// Push squadList objects into players array
 				$scope.players.push(squadList);
-		
-				/* Show the squad list profiles title when a player 
-				is added to the squad list */
-				if ($scope.players.length >= 1) {
-
-					$scope.playerlist = true;
-
-				}  
-				/* Disable the add player function and show the create 
-				teams button hen ten players have been added  */
+				// Show Squad List Title
+				$scope.squadtitle = true;
+					
+				/* Disable the add player function, show the create 
+				teams button and show the reset button when 
+				ten players have been added  */
 				if ($scope.players.length >= 10) {
 
-					$scope.disabled = true;	
+					$scope.disabled = true;
 					$scope.create = true;
+					$scope.reset = true;
 				}
-
 			} 
 
 		// DELETE PLAYER SECTION 
@@ -54,24 +47,15 @@
 				// splice the players array at index 1
   				$scope.players.splice(players, 1);
 
-  				/* if no players are added hide the 
-  				title */
+  				/* if the players array is empty then 
+  				hide the squad title  */
   				if ($scope.players.length < 1) {
 
-					$scope.playerlist = false;
-					
+					$scope.squadtitle = false;		
 				} 
-
-				/* if less than 10 players have been 
-				added then hide the create button */
-				if ($scope.players.length < 10) {
-
-					$scope.create = false;
-				}
-
   			}
 
-			// CREATE TEAMS SECTION
+		// CREATE TEAMS SECTION
 
 			// Create a function to shuffle the players
 			$scope.shuffle = function (array) {
@@ -101,7 +85,8 @@
 
   				}); 
   			}
-
+  			/* Create a function to split the array into two teams 
+  			equally based on the creativity attribute */
   			$scope.filter = function (array) {
 
   				// Create two new empty arrays
@@ -121,21 +106,26 @@
    						array3.push(array[i]);
    					}
 				}	
-
   				// Assign the new arrays to teams in scope
   				$scope.team1 = array2;
   				$scope.team2 = array3;
-
-  				 /*Show five a side team title, team 1 and team 2 titles 
-  				when teams are created */
-  				if ($scope.team1.length >=1) {
-
-  					$scope.pickedteams = true;
-  				}
-				
+  				// Show picked teams titles
+  				$scope.pickedteams = true;
   			}
 
-  			
+  		// RESET TEAMS SECTION 
+  			// Create a function to reset the page at any stage
+  			$scope.resetTeams = function () {
+
+  				$scope.players = [];
+  				$scope.team1 = [];
+  				$scope.team2 = [];
+  				$scope.pickedteams = false;
+  				$scope.squadtitle = false;
+  				$scope.create = false;
+  				$scope.disabled = false;
+  				$scope.reset = false;
+  			}
 
 		}]);	
 

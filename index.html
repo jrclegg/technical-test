@@ -85,7 +85,7 @@
 
 	<!-- Squad List Title -->
 	<div>
-		<h2 ng-show = "playerlist" class = "squad-title">Squad List Profiles</h2>
+		<h2 ng-show = "squadtitle" class = "squad-title">Squad List Profiles</h2>
 	</div>
 
 	<!--Squad List (Each Player Output) -->
@@ -101,11 +101,13 @@
 		</div>
 	</div>
 
-	<!-- Create Teams/Shuffle Teams Button -->
+	
 	<center>
-		<button type = "submit" ng-click = "shuffle(players); filter(players);" class = "create-teams" ng-show ="create">Pick/Shuffle Teams </button>	
+	<!-- Create Teams/Shuffle Teams Button -->
+		<button type = "submit" ng-click = "shuffle(players); filter(players);" class = "create-teams" ng-show ="create">Pick/Shuffle Teams </button>
+	<!-- Reset All Button -->	
+		<button type = "submit" class="btn btn-primary reset-teams" ng-click = "resetTeams()" ng-show ="reset">Reset All</button>
 	</center>
-
 
 	<!-- FIVE A SIDE TEAMS-->
 
