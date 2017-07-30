@@ -31,7 +31,7 @@
 		
 				/* Show the squad list profiles title when a player 
 				is added to the squad list */
-				if ($scope.players.length >=1) {
+				if ($scope.players.length >= 1) {
 
 					$scope.playerlist = true;
 
@@ -46,18 +46,25 @@
 
 			} 
 
+		// DELETE PLAYER SECTION 
+
+			// Create a function to delete players
 			$scope.deletePlayer = function (players) {
 
+				// splice the players array at index 1
   				$scope.players.splice(players, 1);
 
-  				if ($scope.players.length <1) {
+  				/* if no players are added hide the 
+  				title */
+  				if ($scope.players.length < 1) {
 
 					$scope.playerlist = false;
-					$scope.disabled = false;
-
+					
 				} 
 
-				if ($scope.players.length <10) {
+				/* if less than 10 players have been 
+				added then hide the create button */
+				if ($scope.players.length < 10) {
 
 					$scope.create = false;
 				}
@@ -117,7 +124,8 @@
 
   				// Assign the new arrays to teams in scope
   				$scope.team1 = array2;
-  				$scope.team2 = array3;			
+  				$scope.team2 = array3;
+
   				 /*Show five a side team title, team 1 and team 2 titles 
   				when teams are created */
   				if ($scope.team1.length >=1) {

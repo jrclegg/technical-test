@@ -13,6 +13,26 @@
 	text-align: center;
 }
 
+.name {
+	margin-bottom: 10px;
+}
+
+.skill {
+	width: 25%;
+	margin-left: 36px;
+	margin-bottom: 5px;
+}
+
+.creativity {
+	width: 25%;
+	margin-bottom: 5px;
+}
+
+.tackling {
+	width: 25%;
+	margin-left: 7px;
+}
+
 .help-block {
 	color: red;
 }
