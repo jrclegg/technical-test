@@ -33,8 +33,11 @@
 				ten players have been added  */
 				if ($scope.players.length >= 10) {
 
+          // disable add player
 					$scope.disabled = true;
+          // show create teams button
 					$scope.create = true;
+          // show reset button
 					$scope.reset = true;
 				}
 			} 
@@ -53,7 +56,7 @@
 
 					$scope.squadtitle = false;		
 				} 
-  			}
+  		}
 
 		// CREATE TEAMS SECTION
 
@@ -63,7 +66,7 @@
   				var currentIndex = array.length, temporaryValue, randomIndex;
 
   				// While there remain elements to shuffle
- 				 while (0 !== currentIndex) {
+ 				  while (0 !== currentIndex) {
 
     			// Pick a remaining element
     			randomIndex = Math.floor(Math.random() * currentIndex);
@@ -76,7 +79,7 @@
 
   				}
 
-  				// Sort the array in descending order by attribute value 
+  				// Sort the array in descending order of creativity 
   				array.sort(function(a, b){
 
   				 b.creativity - a.creativity;
@@ -95,9 +98,9 @@
 
   				/* Fair teams filter - the for loop pushes even 
   				and odd array indexes into the empty arrays */
-				for (var i = 0;i < array.length; i++){
+				  for (var i = 0;i < array.length; i++){
 
-					if (i % 2 !==0) {
+					  if (i % 2 !==0) {
 
        				array2.push(array[i]);
 
@@ -116,7 +119,7 @@
   		// RESET TEAMS SECTION 
   			// Create a function to reset the page at any stage
   			$scope.resetTeams = function () {
-
+          
   				$scope.players = [];
   				$scope.team1 = [];
   				$scope.team2 = [];

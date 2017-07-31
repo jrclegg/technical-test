@@ -1,16 +1,24 @@
 
+
 .container  {
 	width: 100%;
 	background-color: #228B22;
 }
 
-.container input {
-	width: 100%;
-}
 
  .main-title {
 	color: black;
 	text-align: center;
+}
+
+/******** Add Player Form *******/
+
+.container input {
+	width: 100%;
+}
+
+.help-block {
+	color: red;
 }
 
 .name {
@@ -33,38 +41,59 @@
 	margin-left: 7px;
 }
 
-.help-block {
-	color: red;
-}
+/******* Squad List Title *******/
 
 .squad-title {
 	color: black;
 	text-align: center;
 }
 
+
+/****** Squad List *******/
+
 .squad-player {
 	margin-left: -40px;
 }
 
+
+/***** Create Teams Button ******/
+
 .create-teams {
 	text-align: center;
-    width: 30%;
+    width: 150px;
     margin: 70px;
-    padding: 10px;
+    margin-left: 10px;
+    padding: 15px;
     color: white;
     background-color: blue;
+}
+
+/**** Reset All Button ******/
+.reset-teams {
+	padding: 13px;
+	width: 100px;
+	margin-left: -20px;
 
 }
+
+
+/****** CREATED TEAMS SECTION ******/
+
+/**** Five a side title *****/
 
 .five-a-side-title {
 	text-align: center;
 	color: black;
 }
 
+/**** Team 1 Title *******/
+
 .team-1-title {
 	margin-bottom: 20px;
 	color: red;
 }
+
+/**** Team 2 Title *******/
 
 .team-2-title {
 	text-align: right;
@@ -73,6 +102,8 @@
 	margin-top: -53px;
 	color: blue;
 }
+
+/***** Team 1 ******/
 
 .team1 {
 	margin-left: -20px;
@@ -84,6 +115,12 @@
 	flex-wrap: wrap;
 }
 
+.team-1-list {
+	margin-left: -35px;
+}
+
+/******* Team 2 ******/
+
 .team2 {
 	margin-left: -40px;
 	margin-top: -750px;
@@ -91,10 +128,6 @@
 	display: flex;
 	flex-direction: column-reverse;
 	flex-wrap: wrap-reverse;
-}
-
-.team-1-list {
-	margin-left: -35px;
 }
 
 .team-2-list {

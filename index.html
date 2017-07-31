@@ -104,12 +104,12 @@
 	
 	<center>
 	<!-- Create Teams/Shuffle Teams Button -->
-		<button type = "submit" ng-click = "shuffle(players); filter(players);" class = "create-teams" ng-show ="create">Pick/Shuffle Teams </button>
+		<button type = "submit" ng-click = "shuffle(players); filter(players);" class = "btn btn-primary create-teams" ng-show ="create">Pick/Shuffle Teams </button>
 	<!-- Reset All Button -->	
-		<button type = "submit" class="btn btn-primary reset-teams" ng-click = "resetTeams()" ng-show ="reset">Reset All</button>
+		<button type = "submit" class="btn btn-default reset-teams" ng-click = "resetTeams()" ng-show ="reset">Reset All</button>
 	</center>
 
-	<!-- FIVE A SIDE TEAMS-->
+	<!-- CREATED TEAMS-->
 
 	<!--Five a side teams title -->
 	<h1 ng-show = "pickedteams" class = "five-a-side-title">Here are your five-a-side teams! </h1>
