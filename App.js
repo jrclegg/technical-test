@@ -25,6 +25,7 @@
 
 				// Push squadList objects into players array
 				$scope.players.push(squadList);
+
 				// Show Squad List Title
 				$scope.squadtitle = true;
 					
@@ -79,15 +80,19 @@
 
   				}
 
-  				// Sort the array in descending order of creativity 
+  				// Sort the array in descending order of skill, creativity and tackling (make the teams fair)
   				array.sort(function(a, b){
 
-  				 b.creativity - a.creativity;
+  				 b.skill - a.skill && b.creativity - a.creativity && b.tackling - a.tackling;
 
-  				 return array;
+           return array;
 
-  				}); 
-  			}
+          }); 
+
+          console.log(array);
+
+
+  		}
   			/* Create a function to split the array into two teams 
   			equally based on the creativity attribute */
   			$scope.filter = function (array) {
@@ -98,7 +103,7 @@
 
   				/* Fair teams filter - the for loop pushes even 
   				and odd array indexes into the empty arrays */
-				  for (var i = 0;i < array.length; i++){
+				  for (var i = 0; i < array.length; i++){
 
 					  if (i % 2 !==0) {
 
@@ -108,10 +113,11 @@
 
    						array3.push(array[i]);
    					}
-				}	
+				  }	
   				// Assign the new arrays to teams in scope
   				$scope.team1 = array2;
   				$scope.team2 = array3;
+          
   				// Show picked teams titles
   				$scope.pickedteams = true;
   			}

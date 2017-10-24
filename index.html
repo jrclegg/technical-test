@@ -8,23 +8,23 @@
 <!-- Link to stylesheet -->
 	<link rel="stylesheet" type="text/css" href="style.css">
 </head>
-<body class = "container" ng-app = "PlayersApp" ng-controller = "PlayersController">
+<body class="container" ng-app="PlayersApp" ng-controller="PlayersController">
 
 <!-- Main Title -->
-	<h1 class = "main-title">Selecting "five-a-side" Football Teams</h1>
+	<h1 class="main-title">Selecting "five-a-side" Football Teams</h1>
 
 	<br><br>
 
 <!-- BUILD SQUAD -->
 
 	<!-- Add Player Form-->
-	<form name = "myForm" class = "container">
-		<div class = "col-xs-12 col-md-6 well">
+	<form name="myForm" class="container">
+		<div class="col-xs-12 col-md-6 well">
 		<!-- Add Player Title -->
-			<h2 class = "form-title">Build Your Squad</h2>
+			<h2 class="form-title">Build Your Squad</h2>
 			<h4>Select Ten Players to Create Two Teams</h4>
 		<!-- Player Name Input & Form Validation -->
-			Player Name:<input name= "name" class = "name" type="text" ng-invalid = "number" ng-model = "playerName" required> <p ng-show="myForm.name.$invalid && !myForm.name.$pristine" class="help-block">A Player Name is required.</p> <p ng-show = "myForm.number.$invalid" class = "help-block">Name cannot be a number</p>
+			Player Name:<input name="name" class="name" type="text" ng-invalid="number" ng-model="playerName" required> <p ng-show="myForm.name.$invalid && !myForm.name.$pristine" class="help-block">A Player Name is required.</p>
 
 		<!-- Player Skill Select & Form Validation -->
 			Skill:<select name = "skill" class = "skill" type="number" name = "playerSkill" ng-model = "playerSkill" min="1" max= "10" required>
@@ -39,10 +39,12 @@
 				<option>9</option>
 				<option>10</option>
 			</select><br>
+			<!--
 			<p ng-show="myForm.skill.$error.min" class = "help-block">Number must be between 1 and 10
 			</p>
 			<p ng-show="myForm.skill.$error.max" class = "help-block">Number must be between 1 and 10 
 			</p>
+			-->
 
 		<!-- Player Creativity Select & Form Validation -->
 			Creativity: <select name = "creativity" class = "creativity" type="number" ng-model = "playerCreativity" min="1" max= "10" required>
