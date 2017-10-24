@@ -5,6 +5,14 @@
 
 		"use strict";
 
+    // elite player functionality 
+
+    var eliteplayers = {
+        messi : "images/messi.jpg"
+    };
+
+    $scope.eliteplayers = eliteplayers;
+
 		// Create an empty array called scope.players
 			$scope.players = []; 
 
@@ -28,8 +36,14 @@
 
 				// Show Squad List Title
 				$scope.squadtitle = true;
-					
-				/* Disable the add player function, show the create 
+
+        /* show a picture of Messi if skill is at least 10
+        if (squadList.skill > 9 && squadList.creativity > 9 ) {
+
+          $scope.messi_image = true;
+        } /
+
+        /* Disable the add player function, show the create 
 				teams button and show the reset button when 
 				ten players have been added  */
 				if ($scope.players.length >= 10) {
@@ -56,7 +70,7 @@
   				if ($scope.players.length < 1) {
 
 					$scope.squadtitle = false;		
-				} 
+				  } 
   		}
 
 		// CREATE TEAMS SECTION
@@ -88,10 +102,6 @@
            return array;
 
           }); 
-
-          console.log(array);
-
-
   		}
   			/* Create a function to split the array into two teams 
   			equally based on the creativity attribute */
@@ -135,9 +145,4 @@
   				$scope.disabled = false;
   				$scope.reset = false;
   			}
-
 		}]);	
-
-
-
-		

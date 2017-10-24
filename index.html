@@ -39,12 +39,6 @@
 				<option>9</option>
 				<option>10</option>
 			</select><br>
-			<!--
-			<p ng-show="myForm.skill.$error.min" class = "help-block">Number must be between 1 and 10
-			</p>
-			<p ng-show="myForm.skill.$error.max" class = "help-block">Number must be between 1 and 10 
-			</p>
-			-->
 
 		<!-- Player Creativity Select & Form Validation -->
 			Creativity: <select name="creativity" class="creativity" type="number" ng-model="playerCreativity" min="1" max= "10" required>
@@ -59,8 +53,6 @@
 				<option>9</option>
 				<option>10</option>
 			</select><br> 
-			<p ng-show="myForm.creativity.$error.min" class = "help-block">Number must be between 1 and 10</p>
-			<p ng-show="myForm.creativity.$error.max" class = "help-block">Number must be between 1 and 10</p>
 
 		<!-- Player Tackling Select & Form Validation -->
 			Tackling: <select name="tackling" class ="tackling" type="number" ng-model="playerTackling" min="1" max="10" required> 
@@ -75,12 +67,9 @@
 				<option>9</option>
 				<option>10</option>
 			</select>
-			<p ng-show="myForm.tackling.$error.min" class="help-block">Number must be between 1 and 10
-			</p>
-			<p ng-show="myForm.tackling.$error.max" class="help-block">Number must be between 1 and 10 </p><br><br> 
 
 		<!-- Add Player Submit-->
-			<button type="submit" class="btn btn-primary" ng-click= "addPlayer()" ng-disabled = "myForm.$invalid || disabled" >Add Player
+			<button type="submit" class="btn btn-primary" ng-click= "addPlayer()" ng-click="elitePlayer()" ng-disabled = "myForm.$invalid || disabled" >Add Player
 			</button><br><br>
 		</div>
 	</form>	
@@ -94,6 +83,7 @@
 	<div>
 		<div ng-repeat="player in players" class="col-xs-6 well">
 			<ul class="squad-player">
+				<img ng-src="{{eliteplayers.messi}}" ng-show="messi_image" class="col-xs-6 messi" disabled/>
 				<li>Player Name: {{player.name}}</li>
 				<li>Skill: {{player.skill}}</li>
 				<li>Creativity: {{player.creativity}}</li>
@@ -103,7 +93,6 @@
 		</div>
 	</div>
 
-	
 	<center>
 	<!-- Create Teams/Shuffle Teams Button -->
 		<button type = "submit" ng-click="shuffle(players); filter(players);" class="btn btn-primary create-teams" ng-show="create">Pick/Shuffle Teams </button>
