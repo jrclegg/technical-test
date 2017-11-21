@@ -6,9 +6,9 @@
 		"use strict";
 
     // elite player functionality 
-
+    // create an array containing a photograph of messi
     var eliteplayers = {
-        messi : "images/messi.jpg"
+        messi: "images/messi.jpg"
     };
 
     $scope.eliteplayers = eliteplayers;
@@ -21,7 +21,7 @@
 		// Create a function to add players
 			$scope.addPlayer = function () {
 
-			// Create an empty object 
+			  // Create an empty object 
 				var squadList = {};
 
 				/* Define player attributes in scope so they
@@ -36,12 +36,15 @@
 
 				// Show Squad List Title
 				$scope.squadtitle = true;
+        // Hide Messi Image
+        $scope.messi_image = false;
 
-        /* show a picture of Messi if skill is at least 10
-        if (squadList.skill > 9 && squadList.creativity > 9 ) {
+         /*show a picture of Messi if skill is at least 10 
+        if (squadList.skill > 9 && squadList.creativity > 9) {
 
           $scope.messi_image = true;
-        } /
+        }
+        */
 
         /* Disable the add player function, show the create 
 				teams button and show the reset button when 
@@ -57,7 +60,7 @@
 				}
 			} 
 
-		// DELETE PLAYER SECTION 
+		   // DELETE PLAYER SECTION 
 
 			// Create a function to delete players
 			$scope.deletePlayer = function (players) {
@@ -73,7 +76,7 @@
 				  } 
   		}
 
-		// CREATE TEAMS SECTION
+		  // CREATE TEAMS SECTION
 
 			// Create a function to shuffle the players
 			$scope.shuffle = function (array) {
